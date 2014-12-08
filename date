@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Input date with format yyyy mm dd: "
+read year month day
+echo "Today is $Year/$month/$day,right?"
+echo "Press enter to confirm and continue"
+read answer
+echo "I know the date,bye!"
+
