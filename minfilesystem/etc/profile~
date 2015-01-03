@@ -1,0 +1,25 @@
+# Ash profile
+# vim: syntax=sh
+
+# No core files by default
+#ulimit -S -c 0 > /dev/null 2>&1
+
+USER="`id -un`"
+LOGNAME=$USER
+PS1='[\u@\h \W]\# '
+PATH=$PATH:/usr/local/bin:/usr/local/tslib/bin
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/local/tslib/lib:/usr/local/qte/lib
+HOSTNAME=`/bin/hostname`
+
+export USER LOGNAME PS1 PATH
+
+export T_ROOT=/usr/local/tslib
+export TSLIB_TSDEVICE=/dev/input/event0
+export TSLIB_CALIBFILE=$T_ROOT/etc/pointercal
+export TSLIB_CONFFILE=$T_ROOT/etc/ts.conf
+export TSLIB_PLUGINDIR=$T_ROOT/lib/ts
+export TSLIB_CONSOLEDEVICE=none
+export TSLIB_FBDEVICE=/dev/fb0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$T_ROOT/lib
+export QWS_MOUSE_PROTO=Tslib:/dev/input/event0
+
